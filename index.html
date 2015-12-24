@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="randomizer">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Randomizer</title>
+        <link rel="stylesheet" href="assets/styles/app.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="assets/lib/app.js"></script>
+    </head>
+
+    <body ng-controller="list">
+	    
+	    <div class="sidebar">
+	    	<form ng-submit="addToList()">		
+			    <input type="text" min="1" required ng-model="formListText" placeholder="Add your choice" />
+			    <button type="submit">Add</button>
+	    	</form>
+		    
+		    <ul class="options">
+				<li ng-repeat="item in list">{{ item }}</li>
+		    </ul>
+
+		    <button ng-show="list.length > 0" ng-click="getResult()">Tell me what to do</button>
+	    </div>
+
+	    <div class="main">
+	    	<h1>Randomizer</h1>
+	    	<h2>Take out the stress of planning your evening</h2>
+		    
+		    <div ng-show="show">
+		    	<div ng-hide="hideloader" class="loading"></div>
+		    	
+		    	{{ result }}
+
+		    	<button ng-click="reset()">Reset</button>
+		    </div>
+	    </div>
+
+    </body>
+</html>
