@@ -1,6 +1,6 @@
-var app = angular.module('randomizer', []);
+var app = angular.module('randomizerApp', []);
 
-app.controller('list', function ($scope, $http, $timeout) {
+app.controller('ListController', function ($scope, $http, $timeout) {
 
 	$scope.list = [];
 	$scope.show = false;

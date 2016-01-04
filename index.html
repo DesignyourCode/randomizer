@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="randomizer">
+<html ng-app="randomizerApp">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="">
@@ -10,9 +10,12 @@
         <script src="assets/lib/app.js"></script>
     </head>
 
-    <body ng-controller="list">
+    <body ng-controller="ListController" style="background: url('https://unsplash.it/1920/1080/?random') no-repeat scroll center center transparent; background-size: cover;">
 	    
 	    <div class="sidebar">
+	    	<h1>Randomizer</h1>
+	    	<h2>Take out the stress of planning your evening</h2>
+
 	    	<form ng-submit="addToList()">		
 			    <input type="text" min="1" required ng-model="formListText" placeholder="Add your choice" />
 			    <button type="submit">Add</button>
@@ -23,13 +26,8 @@
 		    </ul>
 
 		    <button ng-show="list.length > 0" ng-click="getResult()">Tell me what to do</button>
-	    </div>
-
-	    <div class="main">
-	    	<h1>Randomizer</h1>
-	    	<h2>Take out the stress of planning your evening</h2>
-		    
-		    <div ng-show="show">
+	    	
+	    	<div ng-show="show">
 		    	<div ng-hide="hideloader" class="loading"></div>
 		    	
 		    	{{ result }}
