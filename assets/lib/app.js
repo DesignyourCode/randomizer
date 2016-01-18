@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 var app = angular.module('randomizerApp', []);
 
 app.controller('ListController', function ($scope, $http, $timeout) {
+=======
+var app = angular.module('randomizer', []);
+
+app.controller('list', function ($scope, $http, $timeout) {
+>>>>>>> fc3ba3cf9b7082091dc712ce557aead93f5075b2
 
 	$scope.list = [];
 	$scope.show = false;
