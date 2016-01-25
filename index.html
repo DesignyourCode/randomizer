@@ -2,7 +2,7 @@
 <html ng-app="randomizerApp">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="">
+        <meta name="description" content="Randomizer - Take out the stress of planning your evening">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Randomizer</title>
         <link rel="stylesheet" href="assets/styles/app.css" />
@@ -13,27 +13,30 @@
     <body ng-controller="ListController" style="background: url('https://unsplash.it/1920/1080/?random') no-repeat scroll center center transparent; background-size: cover;">
 	    
 	    <div class="sidebar">
-	    	<h1>Randomizer</h1>
-	    	<h2>Take out the stress of planning your evening</h2>
+	    	<div class="title">
+	    		<h1>Randomizer</h1>
+	    		<p>Take out the stress of planning your evening</p>
+	    	</div>
+
+		    <ul class="options">
+				<li ng-repeat="item in list">{{ item }} <i class="ion-close-round" ng-click="deleteSkill($index)"></i></li>
+		    </ul>
 
 	    	<form ng-submit="addToList()">		
 			    <input type="text" min="1" required ng-model="formListText" placeholder="Add your choice" />
 			    <button type="submit">Add</button>
 	    	</form>
 		    
-		    <ul class="options">
-				<li ng-repeat="item in list">{{ item }}</li>
-		    </ul>
-
-		    <button ng-show="list.length > 0" ng-click="getResult()">Tell me what to do</button>
+		    <button class="get-results" ng-show="list.length > 0" ng-click="getResult()">Tell me what to do <i class="ion-shuffle"></i></button>
+	    </div>
+    	
+		<div class="overlay" ng-show="show"></div>
+    	<div class="result" ng-show="show">
+	    	<div ng-hide="hideloader" class="loading"></div>
 	    	
-	    	<div ng-show="show">
-		    	<div ng-hide="hideloader" class="loading"></div>
-		    	
-		    	{{ result }}
+	    	{{ result }}
 
-		    	<button ng-click="reset()">Reset</button>
-		    </div>
+	    	<button ng-click="reset()">Reset</button>
 	    </div>
 
     </body>

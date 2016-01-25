@@ -10,6 +10,10 @@ app.controller('ListController', function ($scope, $http, $timeout) {
 
 		$scope.formListText = '';
 	};
+
+	$scope.deleteSkill = function(index) {	
+		$scope.list.splice(index, 1);
+	};
   
 	$scope.getResult = function () {
 		$scope.show = true;
