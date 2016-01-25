@@ -5,9 +5,33 @@
         <meta name="description" content="Randomizer - Take out the stress of planning your evening">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Randomizer</title>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="assets/img/favicons/manifest.json">
+		<link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5e35b1">
+		<link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="assets/img/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#5e35b1">
+
         <link rel="stylesheet" href="assets/styles/app.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="assets/lib/app.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+        <script type="text/javascript" src="assets/lib/app.js"></script>
     </head>
 
     <body ng-controller="ListController" style="background: url('https://unsplash.it/1920/1080/?random') no-repeat scroll center center transparent; background-size: cover;">
@@ -24,19 +48,23 @@
 
 	    	<form ng-submit="addToList()">		
 			    <input type="text" min="1" required ng-model="formListText" placeholder="Add your choice" />
-			    <button type="submit">Add</button>
+			    <button class="btn" type="submit">Add</button>
 	    	</form>
 		    
-		    <button class="get-results" ng-show="list.length > 0" ng-click="getResult()">Tell me what to do <i class="ion-shuffle"></i></button>
+		    <button class="btn full" ng-show="list.length > 0" ng-click="getResult()">Tell me what to do <i class="ion-shuffle"></i></button>
 	    </div>
     	
 		<div class="overlay" ng-show="show"></div>
     	<div class="result" ng-show="show">
-	    	<div ng-hide="hideloader" class="loading"></div>
-	    	
-	    	{{ result }}
+    		<div class="inner">
+	    		<div class="loading-icon" ng-hide="hideloader">
+	    			<span class="loading"></span>
+	    		</div>
+	    		
+	    		<div ng-bind-html="result"></div>
+    		</div>
 
-	    	<button ng-click="reset()">Reset</button>
+	    	<button class="btn full" ng-click="reset()">Start over <i class="ion-loop"></i></button>
 	    </div>
 
     </body>

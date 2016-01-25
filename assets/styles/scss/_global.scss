@@ -43,7 +43,7 @@ body {
 		
 		p {
     		font-size: 12px;
-			margin: 0;
+			margin: 0 0 8px;
 		}
 	}
 
@@ -69,15 +69,6 @@ body {
 		    }
 		}
 	}
-
-	.get-results {
-		background: $purple;
-		border: none;
-		color: $white;
-		padding: 10px;
-		width: 100%;
-		outline: none;
-	}
 }
 
 .overlay {
@@ -88,16 +79,21 @@ body {
 	right: 0;
 	top: 0;
 }
+
 .result {
     background: $white;
     box-shadow: 0 0 30px -8px $black;
     color: $black;
-    padding: 30px;
 	position: fixed;
 	top: 30px;
 	right: 30px;
 	width: 800px;
     text-align: center;
+
+    .large {
+    	font-size: 50px;
+    	line-height: 60px;
+    }
 }
 
 form {
@@ -106,23 +102,38 @@ form {
 	input[type="text"] {
 	    border: none;
 		color: $purple;
+		font-size: 18px;
 		font-family: 'Roboto', sans-serif;
-		font-size: 14px;
 		outline: none;
 		padding: 8px 0;
 		border-radius: 0;
 	}
+}
 
-	button[type="submit"] {
-		background: $purple;
-		border: none;
-		color: $white;
-		float: right;
-		padding: 6px 12px;
-		outline: none;
+.inner {
+	padding: 20px;
+}
+
+.btn {
+	background: $purple;
+	border: none;
+	color: $white;
+	float: right;
+	padding: 8px 12px;
+	outline: none;
+
+	&.full {
+		font-size: 20px;
+		text-align: center;
+		width: 100%;
 	}
 }
 
+// Loading icon
+.loading-icon {
+	height: 70px;
+	position: relative;
+}
 
 .loading,
 .loading::before,
