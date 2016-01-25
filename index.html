@@ -40,10 +40,11 @@
 	    	<div class="title">
 	    		<h1>Randomizer</h1>
 	    		<p>Take out the stress of planning your evening</p>
+	    		<p>Checkout the project on <a href="https://github.com/designyourcode/randomizer">Github <i class="ion-social-github"></i></a>.</p>
 	    	</div>
 
 		    <ul class="options">
-				<li ng-repeat="item in list">{{ item }} <i class="ion-close-round" ng-click="deleteSkill($index)"></i></li>
+		    	<li ng-repeat="item in list"><span>{{ item }}</span> <i class="ion-close-round" ng-click="deleteSkill($index)"></i></li>
 		    </ul>
 
 	    	<form ng-submit="addToList()">		
