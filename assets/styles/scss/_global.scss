@@ -23,9 +23,20 @@ body {
 	left: 30px;
 	float: left;
 	overflow: auto;
-	width: 300px;
+	max-width: 300px;
+	width: 90%;
 	max-height: 90%;
 	z-index: 1;
+
+	@media screen and (max-width: 1200px) {
+	    position: relative;
+	    top: auto;
+	    left: auto;
+	    right: auto;
+	    margin: 30px auto;
+	    max-width: 800px;
+	    float: none;
+    }
 
 	.title {
 		background: $purple;
@@ -78,6 +89,10 @@ body {
 	position: absolute;
 	right: 0;
 	top: 0;
+
+	@media screen and (max-width: 1200px) {
+    	display: none;
+    }
 }
 
 .result {
@@ -87,8 +102,17 @@ body {
 	position: fixed;
 	top: 30px;
 	right: 30px;
-	width: 800px;
+	max-width: 800px;
+	width: 90%;
     text-align: center;
+
+    @media screen and (max-width: 1200px) {
+    	position: relative;
+    	top: auto;
+    	left: auto;
+    	right: auto;
+    	margin: 0 auto;
+    }
 
     .large {
     	font-size: 50px;
