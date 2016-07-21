@@ -7,16 +7,19 @@ Need someone to step in before it turns into a full on battle...enter the random
 
 A super simple angular app that allows you to enter all your choices and it will tell you what you are doing.
 
+Use it here: [http://randomizer.designyourcode.io](http://randomizer.designyourcode.io)
+
 
 To Download and Run
 ===================
 
-Simple clone the project.
-Run 'npm install' and the run 'gulp'.
+Simply clone the project.
 
-This projects uses gulp to compile sass and set up a local server, as well as using auto reload.
+Run `npm install` and then run `gulp`.
 
-**This project is built in AngularJS**
+Gulp is used to compile SASS, set up a local server, provide live reload support and concatinate/minify the javascript.
+
+**Note: This project is built in AngularJS**
 
 Feedback
 ========
