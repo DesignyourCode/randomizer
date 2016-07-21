@@ -16,7 +16,7 @@ Run 'npm install' and the run 'gulp'.
 
 This projects uses gulp to compile sass and set up a local server, as well as using auto reload.
 
-** This project is built in AngularJS **
+**This project is built in AngularJS**
 
 Feedback
 ========
