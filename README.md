@@ -7,7 +7,7 @@ Need someone to step in before it turns into a full on battle...enter the random
 
 A super simple angular app that allows you to enter all your choices and it will tell you what you are doing.
 
-Use it here: [http://randomizer.designyourcode.io](http://randomizer.designyourcode.io){:target="_blank"}
+Use it here: [http://randomizer.designyourcode.io](http://randomizer.designyourcode.io)
 
 
 To Download and Run
